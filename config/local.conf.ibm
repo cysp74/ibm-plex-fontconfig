@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <match>
+        <edit mode="prepend" name="family"><string>IBM Plex Sans</string></edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family"><string>serif</string></test>
+        <edit name="family" mode="prepend" binding="same"><string>IBM Plex Serif</string></edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family"><string>sans-serif</string></test>
+        <edit name="family" mode="prepend" binding="same"><string>IBM Plex Sans</string></edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family"><string>monospace</string></test>
+        <edit name="family" mode="prepend" binding="same"><string>IBM Plex Mono</string></edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family" compare="contains"><string>IBM Plex</string></test>
+	<test qual="all" name="weight" compare="less"><int>100</int></test>
+	<edit name="style" mode="delete_all"></edit>
+        <edit name="weight" mode="assign_replace">
+		<plus>
+			<name>weight</name>
+			<int>10</int>
+		</plus>
+	</edit>
+    </match>
+</fontconfig>
