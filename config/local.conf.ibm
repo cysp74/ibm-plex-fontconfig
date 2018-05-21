@@ -19,7 +19,7 @@
     <match target="pattern">
         <test qual="any" name="family" compare="contains"><string>IBM Plex</string></test>
 	<test qual="all" name="weight" compare="less"><int>100</int></test>
-	<edit name="style" mode="delete_all"></edit>
+	<!-- <edit name="style" mode="delete_all"></edit> -->
         <edit name="weight" mode="assign_replace">
 		<plus>
 			<name>weight</name>
